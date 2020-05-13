@@ -21,7 +21,10 @@ description:         Please see the README on GitHub at <https://github.com/mats
 
 dependencies:
 - base >= 4.7 && < 5
+- bytestring
+- containers
 - megaparsec
+- mtl
 - text
 
 library:
