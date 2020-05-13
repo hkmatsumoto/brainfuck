@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a3a901a107c0e03fcc05ca3919579592ee59bcf02540286a0632167df5fc4600
+-- hash: 8629368c2e5af08013625d3ca3227228a98e466a9e2e828196ef4cc1370204c8
 
 name:           brainfuck
 version:        0.1.0.0
@@ -27,6 +27,7 @@ source-repository head
 
 library
   exposed-modules:
+      Instruction
       Lib
   other-modules:
       Paths_brainfuck
