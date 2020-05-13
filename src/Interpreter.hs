@@ -18,7 +18,7 @@ data Memory = Memory
 
 run :: [Instruction] -> IO ()
 run instr = evalStateT (eval' instr) newMemory
-    where newMemory = Memory { cells = S.replicate 10 0, ptr = 0 }
+    where newMemory = Memory { cells = S.replicate 8196 0, ptr = 0 }
 
 eval :: Instruction -> StateT Memory IO ()
 eval IncrementPtr = modify $ \m -> m { ptr = inc $ ptr m }
