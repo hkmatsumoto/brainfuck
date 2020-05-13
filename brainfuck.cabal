@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 623fec6f9c2ab290083ca7ee37e06a9f5412707f707c17a2f06d68d52db1a761
+-- hash: c32c4792f83754097a61f6d69feba38604db94c764c902ef9c8918e8df0811e0
 
 name:           brainfuck
 version:        0.1.0.0
@@ -31,6 +31,7 @@ library
       Interpreter
       Lib
       Parser
+      Repl
   other-modules:
       Paths_brainfuck
   hs-source-dirs:
@@ -39,6 +40,7 @@ library
       base >=4.7 && <5
     , bytestring
     , containers
+    , haskeline
     , megaparsec
     , mtl
     , text
@@ -56,9 +58,11 @@ executable brainfuck-exe
     , brainfuck
     , bytestring
     , containers
+    , haskeline
     , megaparsec
     , mtl
     , text
+    , transformers
   default-language: Haskell2010
 
 test-suite brainfuck-test
@@ -74,7 +78,9 @@ test-suite brainfuck-test
     , brainfuck
     , bytestring
     , containers
+    , haskeline
     , megaparsec
     , mtl
     , text
+    , transformers
   default-language: Haskell2010
