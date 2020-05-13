@@ -3,7 +3,9 @@
 module Parser where
 
 import           Data.Void
-import           Data.Text                      ( Text )
+import           Data.Text                      ( Text
+                                                , pack
+                                                )
 
 import           Text.Megaparsec
 import           Text.Megaparsec.Char
@@ -14,6 +16,9 @@ import           Data.Functor                   ( void )
 import           Instruction
 
 type Parser = Parsec Void Text
+
+parseProgram :: String -> Either (ParseErrorBundle Text Void) [Instruction]
+parseProgram = parse program "" . pack
 
 program :: Parser [Instruction]
 program = lexeme $ many instruction

@@ -1,6 +1,11 @@
-module Lib
-    ( someFunc
-    ) where
+module Lib where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+import           Text.Megaparsec
+
+import           Interpreter
+import           Parser
+
+exec :: String -> IO ()
+exec code = case parseProgram code of
+    Left  err   -> print $ errorBundlePretty err
+    Right instr -> run instr
